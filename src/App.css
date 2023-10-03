@@ -2,37 +2,57 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color:#000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+li {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+input:checked + label {
+  color: blue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+span {
+  color: red;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked + svg .path-moving {
+  -webkit-transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s cubic-bezier(.3,.8,.6,1.5);
+  transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s cubic-bezier(.3,.8,.6,1.5);
+  stroke-dasharray: 25 90;
+  stroke-dashoffset: 0;
+}
+
+.path-moving,
+.path-back {
+  fill: none;
+  stroke: #1161ee;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.path-moving {
+  -webkit-transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s;
+  transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s;
+  stroke: #ffffff;
+  stroke-dasharray: 110;
+  stroke-dashoffset: -32;
 }

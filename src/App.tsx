@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
+import { useAppDispatch } from './app/hooks';
+import { addProduct } from './app/productSlice';
+import { ProductList } from './components/ProductList';
+import { ProductForm } from './components/ProductForm'; 
 import './App.css';
 
 function App() {
+  const [text, setText] = useState('');
+  const dispatch = useAppDispatch();
+
+  const handleAction = () => {
+    if (text.trim().length) {
+      dispatch(addProduct(text));
+      setText('');
+    } 
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProductForm
+        value={text}
+        updateText={setText}
+        handleAction={handleAction}
+      />
+      <ProductList/>
+      
     </div>
   );
 }
