@@ -8,7 +8,7 @@ export const ProductForm: React.FC<TodoFormProps> = ({ value, updateText, handle
   return (
     <label>
       <input
-        placeholder="Нова задача"
+        placeholder="Новий пункт"
         value={value}
         onChange={(e) => updateText(e.target.value)}
       />

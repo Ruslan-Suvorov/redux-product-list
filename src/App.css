@@ -11,13 +11,32 @@ body {
 
 ul {
   list-style: none;
+  align-items: center;
 }
 
 li {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  width: 50%;
+  margin: 2rem auto ;
+}
+
+input {
+  border-radius: 1em 0 0 3rem;
+  border: solid 3px blue;
+  font-size: 3rem;
+  padding: 1rem 2rem;
+}
+
+button {
+  border-radius: 0 3rem 3rem 0;
+  background-color: blue;
+  border: solid 3px blue;
+  font-size: 3rem;
+  padding: 1rem 1rem;
+  color: white;
 }
 
 input:checked + label {
@@ -25,34 +44,24 @@ input:checked + label {
 }
 
 span {
-  color: red;
+  color: white;
+  background-color: red;
+  padding: 0.1rem 0.9rem;
+  border-radius: 10%;
   cursor: pointer;
 }
 
 .checkbox {
-  display: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  accent-color: blue;
+  margin: 0 2rem 0 -2rem;
 }
 
-.checkbox:checked + svg .path-moving {
-  -webkit-transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s cubic-bezier(.3,.8,.6,1.5);
-  transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s cubic-bezier(.3,.8,.6,1.5);
-  stroke-dasharray: 25 90;
-  stroke-dashoffset: 0;
+.form-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.path-moving,
-.path-back {
-  fill: none;
-  stroke: #1161ee;
-  stroke-width: 3px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
 
-.path-moving {
-  -webkit-transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s;
-  transition: stroke .4s,stroke-dasharray .4s,stroke-dashoffset .4s;
-  stroke: #ffffff;
-  stroke-dasharray: 110;
-  stroke-dashoffset: -32;
-}

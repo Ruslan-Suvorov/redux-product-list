@@ -10,13 +10,16 @@ interface ProductItemProps {
 export const ProductItem: React.FC<ProductItemProps> = ({ id, title, completed }) => {
   const dispatch = useAppDispatch();
   return (
-    <li>      
-      <input 
-        type='checkbox'
-        checked={completed}
-        onChange={() => dispatch(toggleComplete(id))}
-      />
-      <label>{title}</label>
+    <li> 
+      <div className="form-checkbox">     
+        <input 
+          className='checkbox'
+          type='checkbox'
+          checked={completed}
+          onChange={() => dispatch(toggleComplete(id))}
+        />
+        <label>{title}</label>
+      </div>
       <span onClick={() => dispatch(removeProduct(id))}>&times;</span>
     </li>
   )
