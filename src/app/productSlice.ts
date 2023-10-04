@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 type Product = {
   id: string,
   title: string,
+  counter: number,
   completed: boolean,
 }
 
@@ -22,6 +23,7 @@ const productSlice = createSlice({
       state.list.push({
         id: new Date().toISOString(),
         title: action.payload,
+        counter: 1,
         completed: false,
       });
     },
