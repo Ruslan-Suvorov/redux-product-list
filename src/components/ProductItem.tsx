@@ -1,17 +1,20 @@
-import { useAppDispatch } from "../app/hooks";
-import { toggleComplete, removeProduct } from "../app/productSlice";
-import { increment, decrement } from "../app/counterSlice";
-import { Counter } from "./Counter";
+import { Product } from "../app/productSlice";
 
-interface ProductItemProps {
-  id: string,
-  title: string,
-  counter: number,
-  completed: boolean,
+type ProductItemType = Product & {
+  onRemove: () => void;
+  onAmountChange: (newAmount: number) => void;
+  onToggleComplete: () => void;
 }
 
-export const ProductItem: React.FC<ProductItemProps> = ({ id, title, counter, completed }) => {
-  const dispatch = useAppDispatch();
+export const ProductItem: React.FC<ProductItemType> = ({ 
+  id,
+  title,
+  amount,
+  completed,
+  onAmountChange,
+  onToggleComplete,
+  onRemove
+}) => {
   return (
     <li> 
       <div className="form-checkbox">     
@@ -19,30 +22,29 @@ export const ProductItem: React.FC<ProductItemProps> = ({ id, title, counter, co
           className='checkbox'
           type='checkbox'
           checked={completed}
-          onChange={() => dispatch(toggleComplete(id))}
+          onChange={() => onToggleComplete()}
         />
         <label>{title}</label>
       </div>
       <div className="form-checkbox"> 
-      <Counter/>
-      {/* <div className='counter'>
+      <div className='counter'>
         <button
           className='button'
           aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
+          onClick={() => onAmountChange(amount-1)}
         >
           -
         </button>
-        <span className='value'>{counter}</span>
+        <p className='value'>{amount}</p>
         <button
           className='button'
           aria-label="Increment value"
-          onClick={() => dispatch(increment())}
+          onClick={() => onAmountChange(amount+1)}
         >
           +
         </button>
-      </div> */}
-        <span onClick={() => dispatch(removeProduct(id))}>&times;</span>
+      </div>
+        <span onClick={() => onRemove()}>&times;</span>
       </div>
     </li>
   )

@@ -6,7 +6,8 @@ body {
   font-family: 'Open Sans',sans-serif;
   font-weight: 500;
   font-size: 3rem;
-  color:#000;
+  color:rgb(112, 76, 182);;
+  background-color: rgb(37, 23, 72);
 }
 
 ul {
@@ -19,43 +20,50 @@ li {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  width: 70%;
+  width: 90%;
   margin: 2rem auto ;
 }
 
 input {
-  border-radius: 1em 0 0 3rem;
-  border: solid 3px blue;
+  border-radius: 1rem;
+  border: solid 2px rgb(112, 76, 182);
   font-size: 3rem;
   padding: 1rem 2rem;
+  color:#fff;
+  background-color: rgb(37, 23, 72);
+  margin: 2rem;
 }
 
 button {
-  border-radius: 0 3rem 3rem 0;
-  background-color: blue;
-  border: solid 3px blue;
+  border-radius: 1rem;
+  background-color: rgb(112, 76, 182);
+  border: solid 2px rgb(112, 76, 182);
   font-size: 3rem;
   padding: 1rem 1rem;
-  color: white;
+  color: rgb(21, 29, 100);
 }
 
 input:checked + label {
-  color: blue;
+  color: rgb(12, 219, 12);
 }
 
 span {
-  color: white;
-  background-color: red;
+  color: red;
   padding: 0.1rem 0.9rem;
   border-radius: 10%;
   cursor: pointer;
+  border: 1px solid red;
+}
+span:hover {
+  background-color: rgb(74, 8, 8);
 }
 
 .checkbox {
   width: 3.5rem;
   height: 3.5rem;
-  accent-color: blue;
+  accent-color: rgb(12, 219, 12);
   margin: 0 2rem 0 -2rem;
+  border-radius: 10%;
 }
 
 .form-checkbox {
@@ -103,4 +111,7 @@ span {
   background-color: rgba(112, 76, 182, 0.1);
   border: 2px solid rgb(112, 76, 182);
   color: rgb(112, 76, 182);
+  height: 3.7rem;
+  width: 3.7rem;
+  border-radius: 10%;
 }
